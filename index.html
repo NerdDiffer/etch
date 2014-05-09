@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title></title>
+	<link rel='stylesheet' type='text/css' href='styles.css' />
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="squares.js"></script>
+	<script type="text/javascript">
+		//var size = prompt('how many squares per side would you like?');
+		var size = 10;
+	</script> 
+</head>
+<body>
+	<div id='container'>
+		<h3>Etch-A-Sketch by Rafael Espinoza</h3>
+		<div id='options'>
+			<div id='twoButtons'>
+				<button id='clear'>clear</button>
+				<button id='regenerate'>regenerate</button>
+			</div>
+			<div id='effects'>
+				<input type='radio' name='effect' id='black' value='black' /><label for='black' id='black' />Black</label>
+				<input type='radio' name='effect' id='randomColor' value='randomColor' /><label for='randomColor' id='randomColor'>Random Color</label>
+				<input type='radio' name='effect' id='trail' value='trail' checked='checked' /><label for='trail' id='trail'>Trail</label>
+				<input type='radio' name='effect' id='gradient' value='gradient' /><label for='gradient' id='gradient'>Gradient</label>
+			</div> 
+		</div>
+		<script type="text/javascript">
+			document.write(wrapGrid(size, makeRow));
+		</script>
+	</div>
+</body>
+</html>
