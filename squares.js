@@ -57,8 +57,7 @@ $(document).ready(function() {
 			case 'trail':	
 				// lifted from Arturo Coronel (gray background, black squares on hover). 
 				// though my implementation is not perfect. the 'mouseleave' rule leaves opacity lingering at 0.1
-				$(this).css('background-color', 'black');
-				$(this).fadeTo(100, 1);
+				$(this).css({'background-color': 'black', 'opacity': 1});
 				$(this).mouseleave(function() {
 					$(this).fadeTo(800, .1);
 				});
