@@ -1,0 +1,63 @@
+div#etch {
+  width: 600px;
+  height: 700px;
+  padding: 50px;
+  margin: 0 auto;
+  background: red;
+  border: 2px solid black;
+  border-radius: 3em;
+}
+
+div#grid {
+  display: table;
+  width: 600px;
+  height: 700px;
+  margin: 0 auto;
+  background: gray;
+  border-collapse: separate;
+  border-spacing: 1px;
+}
+
+div.row {
+  display: table-row;
+  width: 100%;
+}
+
+div.square {
+  display: table-cell;
+  background-color: gray;
+  border: 1px solid black;
+  opacity: .1;
+}
+
+div#container {
+  width: 960px;
+  margin: 0 auto;
+}
+
+#container h3,
+#options {
+  width: 960px;
+  margin: 5px auto;
+  text-align: center;
+}
+
+#options {
+  display: table;
+  margin-bottom: 10px;
+}
+
+#options button {
+  display: table-row;
+}
+
+#twoButtons {
+  display: block;
+  width: 100%;
+  margin: 5px auto;
+  text-align: center;
+}
+
+#effects {
+  margin: 5px auto;
+}

@@ -1,23 +1,3 @@
-function wrapGrid(size, fn) {
-	var html = '';
-	html += "<div id='etch'><div id='grid'>";
-	html += fn(size);
-	html += "</div></div>"; 
-	return html;
-}
-
-function makeRow(size) {
-	var html = '';
-	for (var r = 1; r <= size; r++) {
-		html += "<div class='row'>";
-		for (var c = 1; c <= size; c++) {
-			html += "<div class='square'></div>";
-		}
-		html += "</div>"; 
-	}
-	return html;
-}
-
 function getCheckedRadioButton() {
 	var rads = document.getElementsByName('effect');
 	for (var i = 0; i < rads.length; i++) {
@@ -43,12 +23,12 @@ $(document).ready(function() {
 			var rgb = [r,g,b];
 			return { 'background-color': 'rgb(' + rgb.map(function(color) {
 				return randomInteger(0, 255);
-			}).toString() + ')'}
-		};
+			}).toString() + ')'};
+		}
 		switch(obj.data()) {
 			case 'black':
 				$(this).css('opacity', 1);
-				$(this).css('background-color', 'black')
+				$(this).css('background-color', 'black');
 				break;
 			case 'randomColor':
 				$(this).css('opacity', 1);
@@ -59,18 +39,18 @@ $(document).ready(function() {
 				// though my implementation is not perfect. the 'mouseleave' rule leaves opacity lingering at 0.1
 				$(this).css({'background-color': 'black', 'opacity': 1});
 				$(this).mouseleave(function() {
-					$(this).fadeTo(800, .1);
+					$(this).fadeTo(800, 0.1);
 				});
 				break;
 			case 'gradient':
-				$(this).css('background-color', 'black')
+				$(this).css('background-color', 'black');
 				var currentOpacity = parseFloat($(this).css('opacity'));
 				if (currentOpacity < 1.0) { 
-					$(this).css('opacity', currentOpacity += .1); 
+					$(this).css('opacity', currentOpacity += 0.1); 
 				}
 				break;
 			default:
-				console.log('not sure how this happened')
+				console.log('not sure how this happened');
 				break;
 		}
 	});
@@ -94,7 +74,7 @@ $(document).ready(function() {
 		// can reliably generate a grid up to 300, but the visual effects are negligible past 64.
 		while (size < 1 || size >= 65) {
 			var badInput = size;
-			var size = prompt('You picked: ' + badInput + '.\nPick between 1 & 64.\nHow many squares per side would you like? ');
+			size = prompt('You picked: ' + badInput + '.\nPick between 1 & 64.\nHow many squares per side would you like? ');
 		}
 		// remove all rows
 		$('.row').remove();
